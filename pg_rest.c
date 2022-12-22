@@ -519,7 +519,12 @@ void pg_rest_background(Datum main_arg)
  
     elog(LOG, "pg_rest(bgw): create HTTP");
 
-    http_server();
+    // http_server();
+	initStringInfo(&buf);
+	exec_queue("select typname , typnamespace , typowner , typlen  from pg_type limit 5", &buf);
+
+    elog(LOG, buf.data);
+	pfree(buf.data);
 
     elog(LOG, "pg_rest(bgw): stop HTTP");
 
@@ -570,5 +575,5 @@ _PG_init(void)
 void
 _PG_fini(void)
 {
-	elog(WARNING,"stop http Server");
+	elog(LOG,"stop http Server");
 }
