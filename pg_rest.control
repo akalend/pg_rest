@@ -1,0 +1,6 @@
+# tablefunc extension
+comment = 'http rest access'
+default_version = '1.0'
+module_pathname = '$libdir/pg_rest'
+relocatable = true
+trusted = true
