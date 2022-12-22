@@ -1,2 +1,2 @@
 # pg_rest
-thenrest api for postgres (in develompment)
+the rest api for postgres (in develompment)
